@@ -13,8 +13,10 @@ namespace CSharpIntermediate
 
         public static Person Parse(string str)
         {
-            var person = new Person();
-            person.Name = str;
+            var person = new Person
+            {
+                Name = str
+            };
 
             return person;
         }
