@@ -6,8 +6,13 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            var text = new Text { Width = 100 };
-            text.Copy();
+            var dbmigrator = new DbMigrator(new Logger());
+
+            var logger = new Logger();
+            var installer = new Installer(logger);
+
+            dbmigrator.Migrate();
+            installer.Install();
         }
     }
 }
