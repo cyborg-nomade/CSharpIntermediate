@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Amazon;
 
 namespace CSharpIntermediate
 {
@@ -6,7 +6,8 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var customer = new Customer();
+            //Amazon. won't work because it's limited to internal assembly
         }
     }
 }
