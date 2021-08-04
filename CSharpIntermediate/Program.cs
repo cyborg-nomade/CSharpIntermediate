@@ -6,18 +6,13 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
+            var newPost = new Post();
+            Post.UpVote(newPost);
+            Post.UpVote(newPost);
+            Post.UpVote(newPost);
+            Post.DownVote(newPost);
 
-            Console.WriteLine("Press enter to stop");
-            Console.ReadLine();
-            stopwatch.Stop();
-
-            stopwatch.Start();
-
-            Console.WriteLine("Press enter to stop");
-            Console.ReadLine();
-            stopwatch.Stop();
+            Console.WriteLine("This post's vote count is: " + newPost.ShowVotes());
         }
     }
 }
