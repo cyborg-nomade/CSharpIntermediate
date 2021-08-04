@@ -6,8 +6,7 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            var customer = new Customer();
-            //Amazon. won't work because it's limited to internal assembly
+            var car = new Car("XYZ1234");
         }
     }
 }
