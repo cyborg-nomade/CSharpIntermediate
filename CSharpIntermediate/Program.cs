@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Diagnostics.SymbolStore;
 
 namespace CSharpIntermediate
 {
@@ -6,7 +6,8 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var text = new Text { Width = 100 };
+            text.Copy();
         }
     }
 }
