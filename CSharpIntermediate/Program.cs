@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 
 namespace CSharpIntermediate
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            var shapes = new List<Shape>();
-            shapes.Add(new Circle());
-            shapes.Add(new Rectangle());
-            shapes.Add(new Triangle());
+            //var shape = new Shape();
 
-            var canvas = new Canvas();
-            canvas.DrawShapes(shapes);
+            var circle = new Circle();
+            circle.Draw();
+
+            var rectangle = new Rectangle();
+            rectangle.Draw();
         }
     }
 }
