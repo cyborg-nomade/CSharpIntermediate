@@ -6,13 +6,19 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            var newPost = new Post();
-            Post.UpVote(newPost);
-            Post.UpVote(newPost);
-            Post.UpVote(newPost);
-            Post.DownVote(newPost);
+            var stack = new Stack();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
 
-            Console.WriteLine("This post's vote count is: " + newPost.ShowVotes());
+            stack.Push(1);
+            stack.Push(1);
+            stack.Push(1);
+            stack.Clear();
+            Console.WriteLine(stack.Pop());
         }
     }
 }
