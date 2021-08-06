@@ -6,7 +6,7 @@ namespace CSharpIntermediate
 {
     public class Stack
     {
-        private ArrayList Members { get; } = new();
+        private List<object> Members { get; } = new();
 
         public void Push(object obj)
         {
