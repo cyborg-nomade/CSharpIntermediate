@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpIntermediate
 {
@@ -6,7 +7,13 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var shapes = new List<Shape>();
+            shapes.Add(new Circle());
+            shapes.Add(new Rectangle());
+            shapes.Add(new Triangle());
+
+            var canvas = new Canvas();
+            canvas.DrawShapes(shapes);
         }
     }
 }
