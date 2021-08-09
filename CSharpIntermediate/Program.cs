@@ -6,19 +6,15 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            var stack = new Stack();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            var sqlConnection = new SqlConnection("conn-string");
+            var oracleConnection = new OracleConnection("conn-string");
 
-            stack.Push(1);
-            stack.Push(1);
-            stack.Push(1);
-            stack.Clear();
-            Console.WriteLine(stack.Pop());
+            sqlConnection.OpenConnection();
+            sqlConnection.CloseConnection();
+            oracleConnection.OpenConnection();
+            oracleConnection.CloseConnection();
+
+
         }
     }
 }

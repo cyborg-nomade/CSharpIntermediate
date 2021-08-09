@@ -6,7 +6,7 @@ namespace CSharpIntermediate
     {
         public override void CloseConnection()
         {
-            Console.WriteLine("SQL SERVER CLOSED CONNECTIONS");
+            Console.WriteLine("SQL SERVER CLOSED CONNECTION");
         }
 
         public override void OpenConnection()
@@ -14,8 +14,9 @@ namespace CSharpIntermediate
             Console.WriteLine("SQL SERVER OPENED CONNECTION");
         }
 
-        public SqlConnection(string connectionString, TimeSpan timeout) : base(connectionString, timeout)
+        public SqlConnection(string connectionString) : base(connectionString)
         {
         }
+
     }
 }
