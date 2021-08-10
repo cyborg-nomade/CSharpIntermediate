@@ -6,9 +6,15 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            //var command = new DbCommand(new SqlConnection("conn-string"), "hey");
-            var command = new DbCommand(new OracleConnection("conn-string"), "hey");
-            command.Execute();
+            var workFlow = new Workflow();
+            var engine = new WorkflowEngine();
+
+            workFlow.AddActivity(new UploadVideo());
+            workFlow.AddActivity(new CallWebService());
+            workFlow.AddActivity(new SendEmail());
+            workFlow.AddActivity(new ChangeStatusToProcessing());
+
+            engine.Run(workFlow);
         }
     }
 }
