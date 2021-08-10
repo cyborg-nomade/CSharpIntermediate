@@ -1,19 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace CSharpIntermediate
 {
-    public class Workflow
+    public interface IWorkflow
     {
-        public readonly IList<IActivities> ActivitiesList;
+        void AddActivity(IActivities activity);
+        void RemoveActivity(IActivities activity);
+        IEnumerable<IActivities> GetActivities();
+    }
+
+    public class Workflow : IWorkflow
+    {
+        private readonly IList<IActivities> _activitiesList;
 
         public Workflow()
         {
-            ActivitiesList = new List<IActivities>();
+            _activitiesList = new List<IActivities>();
         }
 
         public void AddActivity(IActivities activity)
         {
-            ActivitiesList.Add(activity);
+            _activitiesList.Add(activity);
+        }
+
+        public void RemoveActivity(IActivities activity)
+        {
+            _activitiesList.Remove(activity);
+        }
+
+        public IEnumerable<IActivities> GetActivities()
+        {
+            return _activitiesList;
         }
     }
 }
